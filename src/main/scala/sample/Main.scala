@@ -27,10 +27,10 @@ object Main extends App {
   }
 
   //Create a SparkContext to initialize Spark
-  val conf = new SparkConf().setAppName("Word Count").setMaster("local")
+  val conf = new SparkConf().setAppName("Word Count")
   val sc = new SparkContext(conf)
 
-  val counts = countWords(sc, "src/main/resources/shakespeare.txt")
+  val counts = countWords(sc, "/resources/shakespeare.txt")
 
   val output = new File("/tmp/shakespeareWordCount")
 
